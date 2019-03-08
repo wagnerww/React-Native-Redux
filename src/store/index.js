@@ -1,9 +1,8 @@
 import { createStore } from "redux";
 
-function reducer() {
-  return ["Fazer café", "esturdar", "trabalhar"];
-}
+import todos from "./reducers/todos";
 
-const store = createStore(reducer);
+const createAppropriateStore = __DEV__ ? console.tron.createStore : createStore;
+const store = createAppropriateStore(todos);
 
 export default store;
